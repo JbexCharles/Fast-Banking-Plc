@@ -1,0 +1,49 @@
+body {
+      font-family: Arial, sans-serif;
+    }
+.admin-padding{
+    margin-top: 100px;
+}
+   /* Sidebar default */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* hidden by default */
+  width: 250px;
+  height: 100%;
+  background: #343a40;
+  color: white;
+  padding-top: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: #495057;
+}
+
+.sidebar.active {
+  left: 0; /* visible when active */
+}
+
+/* Push content when sidebar opens */
+.main-content {
+  transition: margin-left 0.3s ease;
+}
+.main-content.shifted {
+  margin-left: 250px;
+}
+
+.copy-id-btn{
+  background-color: purple;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}

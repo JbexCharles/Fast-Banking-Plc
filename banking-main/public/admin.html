@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Bank Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- my header -->
+    <my-header></my-header>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h4 class="text-center mb-4">Fast Bank</h4>
+    <a href="#detailed-dashboard"><i class="fa fa-chart-line"></i> Dashboard</a>
+    <a href="#users-tables"><i class="fa fa-users"></i> User Management</a>
+    <a href="#"><i class="fa fa-exchange-alt"></i> Transactions</a>
+    <a href="#"><i class="fa fa-university"></i> Accounts</a>
+    <a href="#"><i class="fa fa-box"></i> Investments</a>
+    <a href="#"><i class="fa fa-tasks"></i> Approvals & Requests</a>
+    <a href="#"><i class="fa fa-envelope"></i> Messaging</a>
+    <a href="#"><i class="fa fa-file-alt"></i> Reports</a>
+    <a href="#"><i class="fa fa-search"></i> Audit Logs</a>
+    <a href="#"><i class="fa fa-shield-alt"></i> Security Center</a>
+    <a href="#"><i class="fa fa-cog"></i> Settings</a>
+  </div>
+
+  <!-- div fluid-container -->
+ <div class="container-fluid admin-padding">
+    <!-- Main Content --> 
+  <div class="main-content me-3">
+    <!-- Topbar -->
+    <div class="topbar d-flex justify-content-between align-items-center px-3 py-2 shadow-sm">
+        <!-- Sidebar toggle icon -->
+        <i class="fa fa-bars fa-lg sidebar-toggle" style="cursor: pointer;"></i>
+        
+        <h5 class="mb-0">Admin Panel</h5>
+        
+        <div>
+            <i class="fa fa-bell me-3"></i>
+            <i class="fa fa-user-circle"></i> Admin
+        </div>
+    </div>
+    <!-- Dashboard Section -->
+    <div id="detailed-dashboard" class="mt-4">
+
+      <div class="row g-3">
+        <div class="col-md-3">
+          <div class="card text-bg-success shadow-sm">
+            <div class="card-body">
+              <h6>Total Users</h6>
+              <h3><span id="userCount">0</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-bg-warning shadow-sm">
+            <div class="card-body">
+              <h6>Pending Approvals</h6>
+              <h3>0</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-bg-primary shadow-sm">
+            <div class="card-body">
+              <h6>Deposits Today</h6>
+              <h3>$ 0.00</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-bg-danger shadow-sm">
+            <div class="card-body">
+              <h6>Withdrawals Today</h6>
+              <h3>$ 0.00</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder Sections -->
+    <div id="users-tables" class="mt-5">
+      <h4>User Management</h4>
+      <!-- user table -->
+       <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>GovernmentId</th>
+              <th>Identification</th>
+              <th>Balance($)</th>
+              <th>Status</th>
+              <th>CopyId</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersList">
+            <tr>
+              <td>#</td>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td>+234 803 123 4567</td>
+              <td>1002456789</td>
+              <td>$5,200</td>
+              <td><span class="badge bg-success">Active</span></td>
+              <td>2025-08-25</td>
+              <td class="table-actions">
+                <i class="fa fa-check text-success" title="Approve"></i>
+                <i class="fa fa-ban text-danger" title="Block"></i>
+                <i class="fa fa-pen text-primary" title="Edit"></i>
+                <i class="fa fa-key text-warning" title="Reset Password"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>#</td>
+              <td>Mary Smith</td>
+              <td>mary@example.com</td>
+              <td>+234 701 555 7777</td>
+              <td>1009876543</td>
+              <td>$800</td>
+              <td><span class="badge bg-warning text-dark">Pending</span></td>
+              <td>2025-08-26</td>
+              <td class="table-actions">
+                <i class="fa fa-check text-success" title="Approve"></i>
+                <i class="fa fa-ban text-danger" title="Reject"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>#</td>
+              <td>Samuel Green</td>
+              <td>samuel@example.com</td>
+              <td>+234 802 999 8888</td>
+              <td>1001234567</td>
+              <td>$12,500</td>
+              <td><span class="badge bg-danger">Blocked</span></td>
+              <td>2025-08-20</td>
+              <td class="table-actions">
+                <i class="fa fa-unlock text-success" title="Unblock"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- user table end -->
+
+    <!-- User Balance Update -->
+    <div class="card shadow-sm mb-4 mt-5 p-3 transfer-form">
+      <div class="card-content text-center">
+          <h3 class="card-title">Update User Balance</h3>
+          <div class="center">
+              <h4><i class="fa fa-user"></i><span id="selectedUserName"></span></h4>
+          </div>
+          <form id="updateUserBalance">
+              <div class="useId mb-3">
+                <input class="form-control" type="text" id="balanceUserId" placeholder="Enter User ID Here">
+              </div>
+              <div class="input-field mb-3">
+                  <input class="form-control" type="number" id="updatedAmount" placeholder="Enter Updated Amount">
+              </div>
+              <button class="btn btn-success w-100" type="submit">Update</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Create User -->
+    <div class="card p-3 mb-5">
+      <div class="card-content">
+          <h3 class="card-title">Create User</h3>
+          
+          <form id="createUserForm">
+              <input type="text" id="name" placeholder="Full Name" required class="form-control mb-3">
+              <input type="email" id="userEmail" placeholder="Email" required class="form-control mb-3">
+              <input type="password" id="userPassword" placeholder="Password" required class="form-control mb-3">
+              <input type="text" id="governmentID" placeholder="Government ID" required class="form-control mb-3">
+              <input type="text" id="address" placeholder="Address" required class="form-control mb-3">
+              <button class="btn btn-success w-100" type="submit">Update</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <my-footer></my-footer>
+  </div>
+  <!-- main script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- others -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

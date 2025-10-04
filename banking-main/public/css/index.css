@@ -1,0 +1,81 @@
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #301934;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+   color: #301934;
+}
+
+h3, h4, h5 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #301934;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+nav{
+  background-color: #280137;
+  transition: all 0.4s ease;
+}
+.navbar-nav .nav-link {
+  color: #C8A2C8 !important; /* your custom color */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #301934 !important; /* hover color */
+}
+.navbar.scrolled {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.purple{
+  color: purple;
+}
+.bg-purple-gradient {
+  /* Purple → Light Purple */
+  background-image: linear-gradient(135deg, #4d087e, #9e6fcf);
+  background-size: 200% 200%;          
+  background-position: left center;     
+  transition: background-position 5s ease-in-out; /* <-- very slow */
+  color: #fff;
+}
+
+.gradient-bg {
+      background: linear-gradient(135deg, #6a0dad, #b266ff);
+      color: white;
+    }
+    .gradient-hover:hover {
+      background: linear-gradient(135deg, #b266ff, #6a0dad);
+      transition: background 3s ease;
+      color: whitesmoke;
+    }
+
+.bg-purple-gradient:hover {
+  background-position: right center; /* slide to opposite side */
+}
+
+
+
+.text-justifier{
+    text-align: justify;
+}
+.rounded{
+  border-radius: 10px;
+}
+.flex-cards-text{
+}
+
+footer{
+  background: linear-gradient(to right, #301934 0%, #000000 100%);
+}

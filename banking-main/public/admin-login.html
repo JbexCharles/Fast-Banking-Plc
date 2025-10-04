@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/admin-login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h5 class="center-align">Sign In</h5>
+            <form id="adminLoginForm">
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" placeholder="Admin Email" id="adminEmail" required />
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" placeholder="Admin Password" id="adminPassword" required />
+                </div>
+                <p id="message"></p>
+                <button id="signin-id" class="btn waves-effect waves-light purple darken-2 full-width" type="submit">Login</button>
+            </form>
+            <div class="message">
+                <p id="adminLoginMessage" class="purple-text center-align"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/admin-login.js"></script>
+</body>
+</html>
